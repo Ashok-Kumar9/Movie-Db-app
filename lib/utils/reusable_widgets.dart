@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teachedison/models/movie_detail_model.dart';
 
 class ReusableWidgets {
   GestureDetector iconButtonWithText(
@@ -64,7 +65,7 @@ class ReusableWidgets {
             .copyWith(
           image: DecorationImage(
             image: NetworkImage(
-              'https://image.tmdb.org/t/p/w500/$posterPath',
+              posterPath!,
             ),
             fit: BoxFit.cover,
           ),
@@ -96,6 +97,99 @@ class ReusableWidgets {
                 fontWeight: FontWeight.w500),
           ),
         ],
+      ),
+    );
+  }
+
+  Expanded movieDetails(MovieDetailModel movieDetailModel) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: movieDetailModel.title,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w900),
+                  ),
+                  TextSpan(
+                    text: ' (${movieDetailModel.year})',
+                    style: TextStyle(
+                        color: Colors.red.withOpacity(1), fontSize: 18),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 6),
+            RichText(
+              text: TextSpan(
+                children: [
+                  for (int i = 0;
+                      i < movieDetailModel.genre!.split(',').length;
+                      i++)
+                    TextSpan(
+                      text: movieDetailModel.genre!.split(',')[i] + ' ',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                ],
+              ),
+            ),
+            SizedBox(height: 8),
+            Row(
+              children: [
+                IconTheme(
+                  data: IconThemeData(
+                    color: Colors.blue,
+                    size: 20,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: List.generate(
+                      5,
+                      (index) {
+                        return Icon(
+                          index <
+                                  (((double.parse(movieDetailModel.imdbRating
+                                              .toString())) /
+                                          2)
+                                      .round())
+                              ? Icons.star
+                              : Icons.star_border,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                RichText(
+                  text: TextSpan(
+                    text: "  " +
+                        (((double.parse(movieDetailModel.imdbRating
+                                        .toString())) /
+                                    2)
+                                .toStringAsFixed(1))
+                            .toString() +
+                        "/5",
+                    style: TextStyle(
+                      fontSize: 14,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.0),
+            ReusableWidgets().elevatedButtonWithIcon(
+                Icons.favorite_border, 'Add to Favorite', () => null),
+            ReusableWidgets().elevatedButtonWithIcon(
+                Icons.play_arrow, '💳  Play/Buy Now', () => null),
+          ],
+        ),
       ),
     );
   }

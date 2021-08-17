@@ -21,7 +21,8 @@ class Carousel extends StatelessWidget {
           mediaQuery.padding.bottom -
           mediaQuery.padding.top,
       child: CarouselSlider.builder(
-        itemCount: movieDetailModel!.length,
+        itemCount: 6,
+        // itemCount: movieDetailModel!.length,
         slideBuilder: (index) {
           return stackImage(index);
         },
@@ -38,7 +39,7 @@ class Carousel extends StatelessWidget {
   GestureDetector stackImage(int index) {
     return GestureDetector(
       onTap: () => Get.to(() => MovieInfoPage(
-            movieDetailModel: movieDetailModel![index],
+            imdbId: movieDetailModel![index].imdbID,
           )),
       child: Stack(
         alignment: Alignment.center,

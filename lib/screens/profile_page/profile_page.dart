@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teachedison/controllers/movie_detail_controller.dart';
 import 'package:teachedison/screens/on_boarding_screen.dart';
+import 'package:teachedison/screens/profile_page/about_app.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -98,7 +99,8 @@ class _ProfilePageState extends State<ProfilePage> {
           backgroundColor:
               MaterialStateProperty.all(Colors.black.withOpacity(0.2)),
         ),
-        onPressed: onTap,
+        onPressed: () => Get.to(() => AboutApp()),
+        // onPressed: onTap,
         child: Row(
           children: [
             Icon(
@@ -116,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.lightBlue,
-                ),
+                )
               ),
             ),
             Icon(

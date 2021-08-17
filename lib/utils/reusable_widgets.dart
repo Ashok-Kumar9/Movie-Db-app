@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:teachedison/models/movie_detail_model.dart';
+import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
 
 class ReusableWidgets {
   GestureDetector iconButtonWithText(
@@ -101,7 +103,8 @@ class ReusableWidgets {
     );
   }
 
-  Expanded movieDetails(MovieDetailModel movieDetailModel) {
+  Expanded movieDetails(
+      {required MovieDetailModel movieDetailModel, bool isFavList = false}) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -184,8 +187,16 @@ class ReusableWidgets {
               ],
             ),
             SizedBox(height: 10.0),
-            ReusableWidgets().elevatedButtonWithIcon(
-                Icons.favorite_border, 'Add to Favorite', () => null),
+            if (isFavList)
+              ReusableWidgets().elevatedButtonWithIcon(
+                  Icons.favorite_border, 'Add to Favorite', () => null)
+            else
+              ReusableWidgets().elevatedButtonWithIcon(
+                  Icons.info_outlined,
+                  'See more details',
+                  () => Get.to(() => MovieInfoPage(
+                        imdbId: movieDetailModel.imdbID,
+                      ))),
             ReusableWidgets().elevatedButtonWithIcon(
                 Icons.play_arrow, '💳  Play/Buy Now', () => null),
           ],

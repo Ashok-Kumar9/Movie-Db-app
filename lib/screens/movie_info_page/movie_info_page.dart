@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:teachedison/controllers/movie_detail_controller.dart';
 import 'package:teachedison/models/movie_detail_model.dart';
 import 'package:teachedison/utils/reusable_widgets.dart';
 
 class MovieInfoPage extends StatefulWidget {
-  MovieDetailModel? movieDetailModel;
-  MovieInfoPage({this.movieDetailModel});
+  String? imdbId;
+  MovieInfoPage({this.imdbId});
 
   @override
   _MovieInfoPageState createState() => _MovieInfoPageState();
@@ -14,11 +15,29 @@ class MovieInfoPage extends StatefulWidget {
 
 class _MovieInfoPageState extends State<MovieInfoPage> {
   ScrollController? scrollController = ScrollController();
+  MovieDetailController movieDetailController = Get.find();
+  MovieDetailModel? movieDetailModel;
+  bool isLoading = true;
+
+  getMovieInfo() async {
+    MovieDetailModel data =
+        await movieDetailController.getByImdbID(widget.imdbId.toString());
+    setState(() {
+      movieDetailModel = data;
+      isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getMovieInfo();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: widget.movieDetailModel != null
+      child: !isLoading
           ? CustomScrollView(
               controller: scrollController,
               slivers: [
@@ -32,8 +51,8 @@ class _MovieInfoPageState extends State<MovieInfoPage> {
                         Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: NetworkImage(
-                                    '${widget.movieDetailModel!.poster}'),
+                                image:
+                                    NetworkImage('${movieDetailModel!.poster}'),
                                 fit: BoxFit.fill),
                           ),
                         ),
@@ -59,10 +78,9 @@ class _MovieInfoPageState extends State<MovieInfoPage> {
                       children: [
                         ReusableWidgets().movieImageTile(
                           onTap: () {},
-                          posterPath: widget.movieDetailModel!.poster,
+                          posterPath: movieDetailModel!.poster,
                         ),
-                        ReusableWidgets()
-                            .movieDetails(widget.movieDetailModel!),
+                        ReusableWidgets().movieDetails(movieDetailModel: movieDetailModel!, isFavList: true),
                       ],
                     ),
                   ),
@@ -70,20 +88,19 @@ class _MovieInfoPageState extends State<MovieInfoPage> {
                 SliverPadding(
                   padding: const EdgeInsets.all(10.0),
                   sliver: SliverToBoxAdapter(
-                    child: movieDescription(
-                        widget.movieDetailModel!.plot.toString()),
+                    child: movieDescription(movieDetailModel!.plot.toString()),
                   ),
                 ),
                 SliverPadding(
                   padding: const EdgeInsets.all(10.0),
                   sliver: SliverToBoxAdapter(
-                    child: trailerColumn(widget.movieDetailModel!),
+                    child: trailerColumn(movieDetailModel!),
                   ),
                 ),
                 SliverPadding(
                   padding: const EdgeInsets.all(10.0),
                   sliver: SliverToBoxAdapter(
-                    child: castColumn(widget.movieDetailModel!),
+                    child: castColumn(movieDetailModel!),
                   ),
                 ),
               ],
@@ -187,15 +204,17 @@ class _MovieInfoPageState extends State<MovieInfoPage> {
                               ),
                             ),
                             Positioned(
-                              top: -15,
-                              left: -15,
-                              child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(
-                                    Icons.play_arrow,
-                                    color: Colors.amber,
-                                    size: 36.0,
-                                  )),
+                              top: 0,
+                              left: 0,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                radius: 16.0,
+                                child: Icon(
+                                  Icons.play_arrow,
+                                  color: Colors.lightBlue,
+                                  size: 32.0,
+                                ),
+                              ),
                             ),
                           ],
                         ),

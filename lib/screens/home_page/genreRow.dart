@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import 'package:get/get.dart';
 import 'package:teachedison/models/movie_detail_model.dart';
 import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
@@ -29,6 +30,7 @@ class GenreRow extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: movieDetailModel!.length,
             itemBuilder: (BuildContext context, int index) {
+              index = Random().nextInt(movieDetailModel!.length);
               return ReusableWidgets().movieImageTile(
                 isCircular: isCircular!,
                 posterPath: movieDetailModel![index].poster,
@@ -36,7 +38,7 @@ class GenreRow extends StatelessWidget {
                   print('movie from row is clicked');
                   Get.to(
                     () => MovieInfoPage(
-                      movieDetailModel: movieDetailModel![index],
+                      imdbId: movieDetailModel![index].imdbID,
                     ),
                   );
                 },

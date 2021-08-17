@@ -44,19 +44,12 @@ class _HomePageState extends State<HomePage> {
                       movieDetailModel: movieController.listOfMovies,
                     ),
                   ),
-                  sliverBox(
-                    genre: 'Trending',
-                    circular: true,
-                  ),
-                  sliverBox(
-                    genre: 'Top Rated',
-                  ),
-                  sliverBox(
-                    genre: 'Comedy',
-                  ),
-                  sliverBox(
-                    genre: 'Thriller',
-                  ),
+                  sliverBox(genre: 'Trending', circular: true),
+                  sliverBox(genre: 'Top Rated'),
+                  sliverBox(genre: 'Biography'),
+                  sliverBox(genre: 'Thriller'),
+                  sliverBox(genre: 'Latest Movies'),
+                  sliverBox(genre: 'Comedy'),
                 ],
               ),
             )

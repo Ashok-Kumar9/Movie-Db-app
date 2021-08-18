@@ -6,7 +6,6 @@ import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
 import 'package:get/get.dart';
 import 'package:teachedison/models/movie_detail_model.dart';
 import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
-import 'package:teachedison/utils/reusable_widgets.dart';
 
 class Carousel extends StatelessWidget {
   final List<MovieDetailModel>? movieDetailModel;

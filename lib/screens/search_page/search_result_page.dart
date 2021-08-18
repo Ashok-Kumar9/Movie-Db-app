@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:teachedison/controllers/search_movie_controller.dart';
-import 'package:teachedison/models/movie_detail_model.dart';
 import 'package:teachedison/models/search_movie_model.dart';
 import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
 import 'package:teachedison/utils/reusable_widgets.dart';

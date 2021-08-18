@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/screens/home_page/home_page.dart';
 import 'package:teachedison/screens/navigation_bar.dart';
-import 'package:teachedison/screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());

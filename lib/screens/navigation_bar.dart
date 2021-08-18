@@ -48,8 +48,8 @@ class _NavigationBarState extends State<NavigationBar> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Join Meet',
+            icon: Icon(Icons.movie_creation_outlined),
+            label: 'Movies',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teachedison/models/movie_detail_model.dart';
+import 'package:teachedison/screens/add_page/movie_player.dart';
 import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
 
 class ReusableWidgets {
@@ -198,7 +199,13 @@ class ReusableWidgets {
                         imdbId: movieDetailModel.imdbID,
                       ))),
             ReusableWidgets().elevatedButtonWithIcon(
-                Icons.play_arrow, 'Play Now', () => null),
+              Icons.play_arrow,
+              'Play Now',
+              () {
+                print('clicked');
+                Get.to(() => MoviePlayer());
+              },
+            ),
           ],
         ),
       ),

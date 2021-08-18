@@ -31,22 +31,23 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       isTopSafeArea: true,
       pages: [
         PageViewModel(
-          title: 'First Onboard screen',
-          body: "Buy the movie and enjoy.",
+          title: 'Teach Edison',
+          body:
+              "An Education Technology Company Primarily focussing on accelerating the World\'s transition to Online Education.",
           image: _buildImage('assets/images/app_icon.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "Live Lecturing",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
+              "Simulate in-person collaboration with our advanced communication channels.",
           image: _buildImage('assets/images/app_icon.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "Support and Payment Gateway",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
+              "Unlimited email support, free training webinars enable you to get the most out of your cloud school.",
           image: _buildImage('assets/images/app_icon.png'),
           decoration: pageDecoration,
         ),

@@ -51,25 +51,27 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 28.0
+                SizedBox(height: 28.0),
+                profileSectionTile(
+                  iconData: Icons.verified_user,
+                  sectionName: 'My Account',
+                  onTap: () => Get.to(() => AboutApp()),
                 ),
                 profileSectionTile(
-                    iconData: Icons.verified_user,
-                    sectionName: 'My Account',
-                    onTap: () {}),
+                  iconData: Icons.notifications,
+                  sectionName: 'Notifications',
+                  onTap: () => Get.to(() => AboutApp()),
+                ),
                 profileSectionTile(
-                    iconData: Icons.notifications,
-                    sectionName: 'Notifications',
-                    onTap: () {}),
+                  iconData: Icons.settings,
+                  sectionName: 'Settings',
+                  onTap: () => Get.to(() => AboutApp()),
+                ),
                 profileSectionTile(
-                    iconData: Icons.settings,
-                    sectionName: 'Settings',
-                    onTap: () {}),
-                profileSectionTile(
-                    iconData: Icons.help_outline,
-                    sectionName: 'Help Center',
-                    onTap: () {}),
+                  iconData: Icons.help_outline,
+                  sectionName: 'Help Center',
+                  onTap: () => Get.to(() => AboutApp()),
+                ),
                 profileSectionTile(
                   iconData: Icons.logout,
                   sectionName: 'Logout',
@@ -99,7 +101,7 @@ class _ProfilePageState extends State<ProfilePage> {
           backgroundColor:
               MaterialStateProperty.all(Colors.black.withOpacity(0.2)),
         ),
-        onPressed: () => Get.to(() => AboutApp()),
+        onPressed: onTap,
         // onPressed: onTap,
         child: Row(
           children: [
@@ -113,13 +115,11 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 44.0,
             ),
             Expanded(
-              child: Text(
-                sectionName,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.lightBlue,
-                )
-              ),
+              child: Text(sectionName,
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.lightBlue,
+                  )),
             ),
             Icon(
               Icons.arrow_forward_ios_rounded,
@@ -132,7 +132,6 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
-
 
 SizedBox profileImage() {
   return SizedBox(

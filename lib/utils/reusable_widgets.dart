@@ -198,7 +198,7 @@ class ReusableWidgets {
                         imdbId: movieDetailModel.imdbID,
                       ))),
             ReusableWidgets().elevatedButtonWithIcon(
-                Icons.play_arrow, '💳  Play/Buy Now', () => null),
+                Icons.play_arrow, 'Play Now', () => null),
           ],
         ),
       ),

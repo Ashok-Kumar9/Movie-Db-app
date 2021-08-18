@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teachedison/screens/add_page/add_page.dart';
+import 'package:teachedison/screens/add_page/movie_player.dart';
 import 'package:teachedison/screens/profile_page/profile_page.dart';
 import 'package:teachedison/screens/search_page/search_page.dart';
 
@@ -19,7 +19,7 @@ class _NavigationBarState extends State<NavigationBar> {
   final screens = [
     HomePage(),
     SearchPage(),
-    AddPage(),
+    MoviePlayer(),
     ActivityPage(),
     ProfilePage()
   ];

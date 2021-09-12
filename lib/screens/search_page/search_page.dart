@@ -1,7 +1,7 @@
+import 'package:MovieFlex/models/genreModel.dart';
+import 'package:MovieFlex/screens/search_page/search_result_page.dart';
+import 'package:MovieFlex/utils/reusable_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:teachedison/models/genreModel.dart';
-import 'package:teachedison/screens/search_page/search_result_page.dart';
-import 'package:teachedison/utils/reusable_widgets.dart';
 import 'package:get/get.dart';
 
 class SearchPage extends StatefulWidget {

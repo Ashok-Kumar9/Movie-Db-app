@@ -1,7 +1,7 @@
+import 'package:MovieFlex/screens/home_page/home_page.dart';
+import 'package:MovieFlex/utils/reusable_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/screens/home_page/home_page.dart';
-import 'package:teachedison/utils/reusable_widgets.dart';
 
 class WatchListPage extends StatelessWidget {
   @override

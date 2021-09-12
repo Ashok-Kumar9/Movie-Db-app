@@ -1,9 +1,9 @@
+import 'package:MovieFlex/models/movie_detail_model.dart';
+import 'package:MovieFlex/screens/movie_info_page/movie_info_page.dart';
+import 'package:MovieFlex/utils/reusable_widgets.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:get/get.dart';
-import 'package:teachedison/models/movie_detail_model.dart';
-import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
-import 'package:teachedison/utils/reusable_widgets.dart';
 
 class GenreRow extends StatelessWidget {
   final List<MovieDetailModel>? movieDetailModel;

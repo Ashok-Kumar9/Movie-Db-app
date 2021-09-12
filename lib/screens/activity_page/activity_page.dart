@@ -1,5 +1,5 @@
+import 'package:MovieFlex/screens/activity_page/watchlist_page.dart';
 import 'package:flutter/material.dart';
-import 'package:teachedison/screens/activity_page/watchlist_page.dart';
 
 import 'favorites_page.dart';
 

@@ -1,9 +1,9 @@
+import 'package:MovieFlex/controllers/movie_detail_controller.dart';
+import 'package:MovieFlex/models/movie_detail_model.dart';
+import 'package:MovieFlex/utils/reusable_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/controllers/movie_detail_controller.dart';
-import 'package:teachedison/models/movie_detail_model.dart';
-import 'package:teachedison/utils/reusable_widgets.dart';
 
 class MovieInfoPage extends StatefulWidget {
   final String? imdbId;

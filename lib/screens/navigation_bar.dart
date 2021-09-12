@@ -1,9 +1,9 @@
+import 'package:MovieFlex/screens/profile_page/profile_page.dart';
+import 'package:MovieFlex/screens/search_page/search_page.dart';
 import 'package:flutter/material.dart';
-import 'package:teachedison/screens/add_page/movie_player.dart';
-import 'package:teachedison/screens/profile_page/profile_page.dart';
-import 'package:teachedison/screens/search_page/search_page.dart';
 
 import 'activity_page/activity_page.dart';
+import 'add_page/movie_player.dart';
 import 'home_page/home_page.dart';
 
 class NavigationBar extends StatefulWidget {

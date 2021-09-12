@@ -1,8 +1,8 @@
+import 'package:MovieFlex/models/movie_detail_model.dart';
+import 'package:MovieFlex/screens/add_page/movie_player.dart';
+import 'package:MovieFlex/screens/movie_info_page/movie_info_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/models/movie_detail_model.dart';
-import 'package:teachedison/screens/add_page/movie_player.dart';
-import 'package:teachedison/screens/movie_info_page/movie_info_page.dart';
 
 class ReusableWidgets {
   GestureDetector iconButtonWithText(

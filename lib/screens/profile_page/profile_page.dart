@@ -1,8 +1,9 @@
+import 'package:MovieFlex/controllers/movie_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/controllers/movie_detail_controller.dart';
-import 'package:teachedison/screens/on_boarding_screen.dart';
-import 'package:teachedison/screens/profile_page/about_app.dart';
+
+import '../on_boarding_screen.dart';
+import 'about_app.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

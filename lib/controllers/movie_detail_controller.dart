@@ -1,6 +1,6 @@
+import 'package:MovieFlex/models/movie_detail_model.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/models/movie_detail_model.dart';
 
 class MovieDetailController extends GetxController {
   List<MovieDetailModel> listOfMovies = <MovieDetailModel>[].obs;

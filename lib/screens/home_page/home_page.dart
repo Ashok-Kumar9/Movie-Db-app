@@ -1,7 +1,7 @@
+import 'package:MovieFlex/controllers/movie_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/controllers/movie_detail_controller.dart';
-import 'package:teachedison/screens/home_page/carousel.dart';
+import 'carousel.dart';
 import 'genreRow.dart';
 
 class HomePage extends StatefulWidget {

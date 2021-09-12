@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:teachedison/screens/navigation_bar.dart';
+
+import 'navigation_bar.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
@@ -12,42 +13,43 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget _buildImage(String assetName) {
-    return Image(image: AssetImage(assetName));
+    return Image(image: AssetImage(assetName), height: 350,);
   }
 
   @override
   Widget build(BuildContext context) {
     const pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: TextStyle(fontSize: 19.0),
+      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700, color: Colors.white),
+      bodyTextStyle: TextStyle(fontSize: 19.0, color: Colors.white),
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
+      pageColor: Colors.black,
       imagePadding: EdgeInsets.zero,
-      bodyAlignment: Alignment.center,
+      bodyFlex: 1,
+      imageFlex: 2
     );
 
     return IntroductionScreen(
-      globalBackgroundColor: Colors.white,
+      globalBackgroundColor: Colors.black,
       isTopSafeArea: true,
       pages: [
         PageViewModel(
-          title: 'Teach Edison',
+          title: 'Movie Flex',
           body:
-              "An Education Technology Company Primarily focussing on accelerating the World\'s transition to Online Education.",
+              "An app to which provides the Theatre experience in your phone.",
           image: _buildImage('assets/images/app_icon.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Live Lecturing",
+          title: "Live Movies",
           body:
-              "Simulate in-person collaboration with our advanced communication channels.",
+              "One can watch any movie online with anyone.",
           image: _buildImage('assets/images/app_icon.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Support and Payment Gateway",
           body:
-              "Unlimited email support, free training webinars enable you to get the most out of your cloud school.",
+              "Easy process of buying any movie and also one can request for a movie if it\'s not already present.",
           image: _buildImage('assets/images/app_icon.png'),
           decoration: pageDecoration,
         ),

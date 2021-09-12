@@ -1,6 +1,6 @@
+import 'package:MovieFlex/models/search_movie_model.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/models/search_movie_model.dart';
 
 class SearchMovieController extends GetxController {
   List<SearchMovieModel> searchedMovieList = <SearchMovieModel>[].obs;

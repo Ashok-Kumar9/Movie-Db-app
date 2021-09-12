@@ -1,9 +1,9 @@
+import 'package:MovieFlex/controllers/movie_detail_controller.dart';
+import 'package:MovieFlex/models/genreModel.dart';
+import 'package:MovieFlex/utils/reusable_widgets.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teachedison/controllers/movie_detail_controller.dart';
-import 'package:teachedison/models/genreModel.dart';
-import 'package:teachedison/utils/reusable_widgets.dart';
 import 'package:video_player/video_player.dart';
 
 class MoviePlayer extends StatefulWidget {

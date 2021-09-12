@@ -16,7 +16,7 @@ class AboutApp extends StatelessWidget {
             child: Image(
               height: 100,
               image: NetworkImage(
-                'https://www.teachedison.com/static/images/brand-logo.png',
+                'https://images-na.ssl-images-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light._SY32_FMpng_.png',
               ),
             ),
           ),
@@ -25,7 +25,7 @@ class AboutApp extends StatelessWidget {
           SizedBox(height: 20),
           ListTile(
             onTap: () {
-              launch('https://www.teachedison.com');
+              launch('https://www.primevideo.com/ref=atv_nb_logo');
             },
             title: Text('Visit Our Website',
                 style: TextStyle(color: Colors.white)),
@@ -34,7 +34,7 @@ class AboutApp extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              launch('https://www.teachedison.com/about-us');
+              launch('https://www.primevideo.com/ref=atv_nb_logo');
             },
             title: Text('About Us', style: TextStyle(color: Colors.white)),
             trailing: Icon(Icons.arrow_forward_ios,

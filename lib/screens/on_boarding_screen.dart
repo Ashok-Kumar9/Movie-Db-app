@@ -54,7 +54,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           decoration: pageDecoration,
         ),
       ],
-      onDone: () => Get.off(() => NavigationBar()),
+      onDone: () => Get.off(() => NavigationBarOurs()),
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,

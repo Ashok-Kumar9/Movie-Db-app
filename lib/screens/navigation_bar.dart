@@ -6,14 +6,14 @@ import 'activity_page/activity_page.dart';
 import 'add_page/movie_player.dart';
 import 'home_page/home_page.dart';
 
-class NavigationBar extends StatefulWidget {
-  const NavigationBar({Key? key}) : super(key: key);
+class NavigationBarOurs extends StatefulWidget {
+  const NavigationBarOurs({Key? key}) : super(key: key);
 
   @override
-  _NavigationBarState createState() => _NavigationBarState();
+  _NavigationBarOursState createState() => _NavigationBarOursState();
 }
 
-class _NavigationBarState extends State<NavigationBar> {
+class _NavigationBarOursState extends State<NavigationBarOurs> {
   int _selectedIndex = 0;
 
   final screens = [
